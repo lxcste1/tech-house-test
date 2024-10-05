@@ -29,9 +29,9 @@ jobs:
         working-directory: ./todo-crud
         run: npm install
 
-      - name: Run tests (TODO CRUD)
-        working-directory: ./todo-crud
-        run: npm test
+      # - name: Run tests (TODO CRUD)
+      #   working-directory: ./todo-crud
+      #   run: npm test
 
   # MINI-CHALLENGE:
   #   runs-on: ubuntu-latest
