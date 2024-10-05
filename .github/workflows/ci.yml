@@ -29,24 +29,40 @@ jobs:
         working-directory: ./todo-crud
         run: npm install
 
+      - name: Cache node modules for TODO CRUD
+        uses: actions/cache@v3
+        with:
+          path: ./todo-crud/node_modules
+          key: ${{ runner.os }}-todo-${{ hashFiles('todo-crud/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-todo-
+
       # - name: Run tests (TODO CRUD)
       #   working-directory: ./todo-crud
       #   run: npm test
 
-  # MINI-CHALLENGE:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       node-version: [18.x]
+      # mini-challenge:
+      #   runs-on: ubuntu-latest
+      #   strategy:
+      #     matrix:
+      #       node-version: [18.x]
 
-  #   steps:
-  #     - name: Check out the repository
-  #       uses: actions/checkout@v3
+      #   steps:
+      #     - name: Check out the repository
+      #       uses: actions/checkout@v3
 
-  #     - name: Set up Node.js
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
+      #     - name: Set up Node.js
+      #       uses: actions/setup-node@v3
+      #       with:
+      #         node-version: ${{ matrix.node-version }}
+
+      # - name: Cache node modules for MINI-CHALLENGE
+      #   uses: actions/cache@v3
+      #   with:
+      #   path: ./mini-challenge/node_modules
+      #   key: ${{ runner.os }}-mini-challenge-${{ hashFiles('mini-challenge/package-lock.json') }}
+      #   restore-keys: |
+      #     ${{ runner.os }}-mini-challenge-
 
   #     - name: Install dependencies (MINI CHALLENGE)
   #       working-directory: ./MINI-CHALLENGE
@@ -56,7 +72,7 @@ jobs:
   #       working-directory: ./MINI-CHALLENGE
   #       run: npm test
 
-  # TRAFFIC-LIGHTS:
+  #   traffic-lights:
   #   runs-on: ubuntu-latest
   #   strategy:
   #     matrix:
@@ -71,10 +87,18 @@ jobs:
   #       with:
   #         node-version: ${{ matrix.node-version }}
 
+  #     - name: Cache node modules for TRAFFIC-LIGHTS
+  #       uses: actions/cache@v3
+  #       with:
+  #       path: ./traffic-lights/node_modules
+  #       key: ${{ runner.os }}-traffic-lights-${{ hashFiles('traffic-lights/package-lock.json') }}
+  #       restore-keys: |
+  #         ${{ runner.os }}-traffic-lights-
+
   #     - name: Install dependencies (TRAFFIC LIGHTS)
-  #       working-directory: ./TRAFFIC-LIGHTS
+  #       working-directory: ./traffic-lights
   #       run: npm install
 
   #     - name: Run tests (TRAFFIC LIGHTS)
-  #       working-directory: ./TRAFFIC-LIGHTS
+  #       working-directory: ./traffic-lights
   #       run: npm test
