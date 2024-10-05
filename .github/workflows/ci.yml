@@ -41,6 +41,10 @@ jobs:
       #   working-directory: ./todo-crud
       #   run: npm test
 
+      - name: Deploy todo-crud to Vercel
+        working-directory: ./todo-crud
+        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+
       # mini-challenge:
       #   runs-on: ubuntu-latest
       #   strategy:
@@ -56,7 +60,7 @@ jobs:
       #       with:
       #         node-version: ${{ matrix.node-version }}
 
-      # - name: Cache node modules for MINI-CHALLENGE
+      # - name: Cache node modules for mini-challenge
       #   uses: actions/cache@v3
       #   with:
       #   path: ./mini-challenge/node_modules
@@ -64,13 +68,17 @@ jobs:
       #   restore-keys: |
       #     ${{ runner.os }}-mini-challenge-
 
-  #     - name: Install dependencies (MINI CHALLENGE)
-  #       working-directory: ./MINI-CHALLENGE
-  #       run: npm install
+      # - name: Install dependencies (MINI CHALLENGE)
+      #   working-directory: ./mini-challenge
+      #   run: npm install
 
-  #     - name: Run tests (MINI CHALLENGE)
-  #       working-directory: ./MINI-CHALLENGE
-  #       run: npm test
+      # - name: Run tests (MINI CHALLENGE)
+      #   working-directory: ./mini-challenge
+      #   run: npm test
+
+      # - name: Deploy mini-challenge to Vercel
+      #   working-directory: ./mini-challenge
+      #   run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
 
   #   traffic-lights:
   #   runs-on: ubuntu-latest
@@ -102,3 +110,7 @@ jobs:
   #     - name: Run tests (TRAFFIC LIGHTS)
   #       working-directory: ./traffic-lights
   #       run: npm test
+
+  #     - name: Deploy traffic-lights to Vercel
+  #       working-directory: ./traffic-lights
+  #       run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
