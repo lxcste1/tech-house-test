@@ -1,0 +1,80 @@
+name: CI for Monorepo
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  TODO-CRUD:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies (TODO CRUD)
+        working-directory: ./TODO-CRUD
+        run: npm install
+
+      - name: Run tests (TODO CRUD)
+        working-directory: ./TODO-CRUD
+        run: npm test
+
+  # MINI-CHALLENGE:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       node-version: [18.x]
+
+  #   steps:
+  #     - name: Check out the repository
+  #       uses: actions/checkout@v3
+
+  #     - name: Set up Node.js
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+
+  #     - name: Install dependencies (MINI CHALLENGE)
+  #       working-directory: ./MINI-CHALLENGE
+  #       run: npm install
+
+  #     - name: Run tests (MINI CHALLENGE)
+  #       working-directory: ./MINI-CHALLENGE
+  #       run: npm test
+
+  # TRAFFIC-LIGHTS:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       node-version: [18.x]
+
+  #   steps:
+  #     - name: Check out the repository
+  #       uses: actions/checkout@v3
+
+  #     - name: Set up Node.js
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+
+  #     - name: Install dependencies (TRAFFIC LIGHTS)
+  #       working-directory: ./TRAFFIC-LIGHTS
+  #       run: npm install
+
+  #     - name: Run tests (TRAFFIC LIGHTS)
+  #       working-directory: ./TRAFFIC-LIGHTS
+  #       run: npm test
