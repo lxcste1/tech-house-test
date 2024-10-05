@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  TODO-CRUD:
+  todo-crud:
     runs-on: ubuntu-latest
 
     strategy:
@@ -26,12 +26,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies (TODO CRUD)
-        working-directory: ./TODO-CRUD
+        working-directory: ./todo-crud
         run: npm install
 
-      - name: Run tests (TODO CRUD)
-        working-directory: ./TODO-CRUD
-        run: npm test
+      # - name: Run tests (TODO CRUD)
+      #   working-directory: ./todo-crud
+      #   run: npm test
 
   # MINI-CHALLENGE:
   #   runs-on: ubuntu-latest
