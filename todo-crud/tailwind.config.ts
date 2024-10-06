@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'neutral-10': '#DBDBDB',
+        'neutral-60': '#555555',
+        'primary-main': '#639605'
       },
     },
   },
