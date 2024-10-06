@@ -1,15 +1,11 @@
-type MainContentProps = {
-  selectedItem: string;
-};
+import React from 'react'
+import MainContent from './components/MainContent'
 
-const MainContent: React.FC<MainContentProps> = ({ selectedItem }) => {
+export default function Home() {
+  const selectedItem = 'Mis tareas';
+
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">{selectedItem}</h2>
-      {/* Aquí puedes agregar el contenido dinámico que deseas mostrar según la opción seleccionada */}
-      <p>{`Contenido dinámico para ${selectedItem}`}</p>
-    </div>
-  );
-};
+    <MainContent selectedItem={selectedItem} />
+  )
+}
 
-export default MainContent;
