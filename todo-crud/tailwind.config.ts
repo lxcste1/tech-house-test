@@ -12,7 +12,10 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         'neutral-10': '#DBDBDB',
+        'neutral-20': '#B3B3B3',
+        'neutral-40': '#777777',
         'neutral-60': '#555555',
+        'neutral-80': '#333333',
         'primary-main': '#639605'
       },
     },

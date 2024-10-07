@@ -6,7 +6,7 @@ const API_URL = 'https://jsonplaceholder.typicode.com/todos';
 
 export const getItems = async () => {
   const response = await axios.get(API_URL);
-  return response.data;
+  return response.data.slice(0, 3);
 };
 
 export const createItem = async (item: Item) => {
