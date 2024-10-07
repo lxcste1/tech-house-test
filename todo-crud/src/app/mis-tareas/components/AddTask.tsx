@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+/* import { useItemContext } from "../context/ItemContext"; */  // TODO: Resolver Context
 import { Item } from "@/app/types/Item";
+
 import Image from "next/image";
 
 import { Button } from "@mui/base";
@@ -8,10 +10,12 @@ import { Dialog, DialogContent, DialogTitle, DialogActions } from "@mui/material
 import Close from '@/app/public/assets/icons/Close.svg';
 
 interface AddTaskProps {
-    onAddTask: (newItem: Item) => void; // Nueva prop para pasar el nuevo ítem a MyTodos
+    onAddTask: (newItem: Item) => void;
   }
 
 export const AddTask = ({onAddTask}: AddTaskProps) => {
+    /* const { addItem } = useItemContext(); */ // TODO: Resolver Context
+
     const [open, setOpen] = useState(false);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -22,22 +26,42 @@ export const AddTask = ({onAddTask}: AddTaskProps) => {
   
       if (nextId !== null) {
         const newItem: Item = {
-          id: nextId, // ID autogenerado
+          id: nextId,
           title,
           description,
         };
   
         try {
-          onAddTask(newItem); // Llamamos la función para agregar el nuevo ítem al estado en MyTodos
-          setNextId(prevId => (prevId !== null ? prevId + 1 : 1)); // Incrementar el ID
-          setTitle(''); // Limpiar formulario
+          onAddTask(newItem);
+          setNextId(prevId => (prevId !== null ? prevId + 1 : 1)); 
+          setTitle('');
           setDescription('');
-          setOpen(false); // Cerrar el modal
+          setOpen(false);
         } catch (error) {
           console.error("Error al crear el ítem", error);
         }
       }
     };
+
+/*     const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (nextId !== null) {
+            const newItem: Item = {
+            id: nextId,
+            title,
+            description,
+            };
+
+            try {
+                addItem(newItem);
+                setTitle('');
+                setDescription('');
+            } catch (error) {
+                console.error("Error al crear el ítem", error);
+            }
+        }
+    }; */
   
     const handleClickOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
