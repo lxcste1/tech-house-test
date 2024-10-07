@@ -43,7 +43,7 @@ const MyTodos: React.FC = () => {
     };
 
     return (
-        <div className={`${pathname === '/mis-tareas' ? 'p-4 max-w-lg m-auto' : ''}`}>
+        <div className={`${pathname === '/mis-tareas' ? 'px-4 py-8 max-w-lg m-auto' : ''}`}>
             {pathname === '/mis-tareas' && <h2 className="text-xl font-bold text-neutral-60">Mis tareas</h2>}
             {loading ? (
                 <SkeletonCard rows={3} />
