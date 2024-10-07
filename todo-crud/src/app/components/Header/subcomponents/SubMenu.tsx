@@ -29,7 +29,7 @@ export const SubMenu: React.FC = () => {
             onClick={() => setActiveItem(label)}
             className={`flex items-center mx-2 h-[50px] text-base normal-case ${
               activeItem === label
-                ? 'bg-white text-primary-main font-bold'
+                ? 'text-primary-main font-bold'
                 : 'text-neutral-60 font-semibold'
             }`}
           >

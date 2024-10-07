@@ -1,8 +1,7 @@
 const MisDevoluciones: React.FC = () => {
     return (
-      <div className="p-4">
-        <h2 className="text-2xl font-semibold">Mis devoluciones</h2>
-        <p>Se renderizan Mis devoluciones.</p>
+      <div className="px-4 py-8 max-w-lg m-auto">
+        <h2 className="text-xl font-bold text-neutral-60">Mis devoluciones</h2>
       </div>
     );
   };
