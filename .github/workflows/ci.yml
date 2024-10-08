@@ -80,37 +80,37 @@ jobs:
         working-directory: ./mini-challenge
         run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
 
-  #   traffic-lights:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       node-version: [18.x]
+  traffic-lights:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
 
-  #   steps:
-  #     - name: Check out the repository
-  #       uses: actions/checkout@v3
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
 
-  #     - name: Set up Node.js
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-  #     - name: Cache node modules for TRAFFIC-LIGHTS
-  #       uses: actions/cache@v3
-  #       with:
-  #       path: ./traffic-lights/node_modules
-  #       key: ${{ runner.os }}-traffic-lights-${{ hashFiles('traffic-lights/package-lock.json') }}
-  #       restore-keys: |
-  #         ${{ runner.os }}-traffic-lights-
+      - name: Cache node modules for TRAFFIC-LIGHTS
+        uses: actions/cache@v3
+        with:
+          path: ./traffic-lights/node_modules
+          key: ${{ runner.os }}-traffic-lights-${{ hashFiles('traffic-lights/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-traffic-lights-
 
-  #     - name: Install dependencies (TRAFFIC LIGHTS)
-  #       working-directory: ./traffic-lights
-  #       run: npm install
+      - name: Install dependencies (TRAFFIC LIGHTS)
+        working-directory: ./traffic-lights
+        run: npm install
 
-  #     - name: Run tests (TRAFFIC LIGHTS)
-  #       working-directory: ./traffic-lights
-  #       run: npm test
+      # - name: Run tests (TRAFFIC LIGHTS)
+      #   working-directory: ./traffic-lights
+      #   run: npm test
 
-  #     - name: Deploy traffic-lights to Vercel
-  #       working-directory: ./traffic-lights
-  #       run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy traffic-lights to Vercel
+        working-directory: ./traffic-lights
+        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
