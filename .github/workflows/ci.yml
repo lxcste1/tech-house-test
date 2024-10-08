@@ -45,40 +45,40 @@ jobs:
         working-directory: ./todo-crud
         run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
 
-      # mini-challenge:
-      #   runs-on: ubuntu-latest
-      #   strategy:
-      #     matrix:
-      #       node-version: [18.x]
+  mini-challenge:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
 
-      #   steps:
-      #     - name: Check out the repository
-      #       uses: actions/checkout@v3
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
 
-      #     - name: Set up Node.js
-      #       uses: actions/setup-node@v3
-      #       with:
-      #         node-version: ${{ matrix.node-version }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-      # - name: Cache node modules for mini-challenge
-      #   uses: actions/cache@v3
-      #   with:
-      #   path: ./mini-challenge/node_modules
-      #   key: ${{ runner.os }}-mini-challenge-${{ hashFiles('mini-challenge/package-lock.json') }}
-      #   restore-keys: |
-      #     ${{ runner.os }}-mini-challenge-
+      - name: Cache node modules for mini-challenge
+        uses: actions/cache@v3
+        with:
+          path: ./mini-challenge/node_modules
+          key: ${{ runner.os }}-mini-challenge-${{ hashFiles('mini-challenge/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-mini-challenge-
 
-      # - name: Install dependencies (MINI CHALLENGE)
-      #   working-directory: ./mini-challenge
-      #   run: npm install
+      - name: Install dependencies (MINI CHALLENGE)
+        working-directory: ./mini-challenge
+        run: npm install
 
       # - name: Run tests (MINI CHALLENGE)
       #   working-directory: ./mini-challenge
       #   run: npm test
 
-      # - name: Deploy mini-challenge to Vercel
-      #   working-directory: ./mini-challenge
-      #   run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy mini-challenge to Vercel
+        working-directory: ./mini-challenge
+        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
 
   #   traffic-lights:
   #   runs-on: ubuntu-latest

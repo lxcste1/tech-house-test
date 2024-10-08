@@ -1,0 +1,4 @@
+mini-challenge/node_modules/
+.env
+dist/
+*.log
