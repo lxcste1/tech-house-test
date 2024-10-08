@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #DBDBDB;
+}
+body .main {
+  max-width: 500px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .main .card {
+  padding: 8px;
+  background-color: #F8F8F8;
+  border: 1px solid #DBDBDB;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  width: 162px;
+  height: 192px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+@media screen and (min-width: 768px) {
+  body .main .card {
+    width: 264px;
+    height: 264px;
+    gap: 16px;
+    padding: 16px;
+  }
+}
+body .main .card__image {
+  display: flex;
+  justify-content: center;
+}
+body .main .card__image--desktop {
+  display: block;
+}
+@media screen and (max-width: 767px) {
+  body .main .card__image--desktop {
+    display: none;
+  }
+}
+body .main .card__image--mobile {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  body .main .card__image--mobile {
+    display: none;
+  }
+}
+body .main .card__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+body .main .card__description--title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 17px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  body .main .card__description--title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+body .main .card__description--text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17px;
+  text-align: center;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  body .main .card__description--text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+body .main .card__button {
+  cursor: pointer;
+  background-color: #7AB800;
+  padding: 8px 16px;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  body .main .card__button {
+    width: fit-content;
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+body .main .card__button.danger {
+  background-color: #CC292B;
+}
+
+/*# sourceMappingURL=main.css.map */
